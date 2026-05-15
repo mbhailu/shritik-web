@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const products = [
   {
-    emoji: '/images/cashew-icon.svg',
+    emoji: '/images/cashew-icon.png',
     name: 'Cashew Kernels',
     href: '/products/cashew-kernels',
     tagline: 'Premium grades for every application',

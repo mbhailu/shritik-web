@@ -149,7 +149,7 @@ export default function ExportPage() {
             <ScrollReveal animation="left">
               <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-8 facility-card card-shimmer h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="float-icon"><img src="/images/cashew-icon.svg" alt="Cashew" className="w-10 h-10" /></div>
+                  <div className="float-icon"><img src="/images/cashew-icon.png" alt="Cashew" className="w-10 h-10" /></div>
                   <h3 className="font-serif text-xl font-bold text-amber-900">Cashew Kernel Packaging</h3>
                 </div>
                 <ul className="space-y-3">

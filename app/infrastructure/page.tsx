@@ -78,7 +78,7 @@ export default function InfrastructurePage() {
           <div className="grid lg:grid-cols-2 gap-8">
             <ScrollReveal animation="left">
               <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200 rounded-3xl p-8 facility-card card-shimmer h-full">
-                <div className="mb-4 float-icon"><img src="/images/cashew-icon.svg" alt="Cashew" className="w-12 h-12" /></div>
+                <div className="mb-4 float-icon"><img src="/images/cashew-icon.png" alt="Cashew" className="w-12 h-12" /></div>
                 <h3 className="font-serif text-2xl font-bold text-amber-900 mb-3">Cashew Processing Unit</h3>
                 <p className="text-gray-600 leading-relaxed mb-5">
                   Our cashew processing facility in Gujarat handles the complete value chain — from raw nut receiving through steam conditioning, shelling, peeling, grading, and export packing.

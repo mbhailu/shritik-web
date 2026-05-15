@@ -48,7 +48,7 @@ const products = [
     name: 'Cashew Kernels',
     desc: 'Premium W180 to W450 grades and splits — whole, broken, and splits for snacking, confectionery, and food processing.',
     href: '/products/cashew-kernels',
-    icon: '/images/cashew.svg',
+    icon: '/images/cashew.png',
     tags: ['W180', 'W240', 'W320', 'W450', 'Splits'],
     color: 'from-amber-50 to-yellow-50',
     border: 'border-amber-200',
@@ -277,7 +277,7 @@ export default function HomePage() {
             {/* Product mini-grid — pops in with stagger */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { bg: 'bg-[#f0fdf4]', border: 'border-green-100',  icon: '/images/cashew-icon.svg', title: 'Cashew Kernels',    sub: 'W180 to W450 and all splits — the full range', head: 'text-[#1a472a]', mt: '' },
+                { bg: 'bg-[#f0fdf4]', border: 'border-green-100',  icon: '/images/cashew-icon.png', title: 'Cashew Kernels',    sub: 'W180 to W450 and all splits — the full range', head: 'text-[#1a472a]', mt: '' },
                 { bg: 'bg-purple-50',  border: 'border-purple-100', icon: '🧅', title: 'Dehydrated Onion',  sub: 'White & red, all forms',                          head: 'text-purple-900', mt: 'mt-6' },
                 { bg: 'bg-orange-50',  border: 'border-orange-100', icon: '🧄', title: 'Dehydrated Garlic', sub: 'High allicin, all forms',                          head: 'text-orange-900', mt: '' },
                 { bg: 'bg-amber-50',   border: 'border-amber-100',  icon: '🫚', title: 'Dehydrated Ginger', sub: 'Natural gingerol retained',                        head: 'text-amber-900',  mt: 'mt-6' },
