@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx tsc *)",
       "Bash(ls \"C:\\\\Users\\\\jay71\\\\Downloads\\\\website\\\\New Images\" && ls \"C:\\\\Users\\\\jay71\\\\Downloads\" | grep -i cashew 2>/dev/null || true)",
-      "Read(//c/Users/jay71/Downloads/**)"
+      "Read(//c/Users/jay71/Downloads/**)",
+      "Bash(node -e \"const sharp = require\\('sharp'\\); console.log\\('sharp available'\\);\")"
     ]
   }
 }

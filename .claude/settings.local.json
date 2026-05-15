@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npm run:*)",
       "Bash(ls \"C:\\\\Users\\\\jay71\\\\Downloads\\\\website\")",
-      "Read(//c/Users/jay71/Downloads/website/**)"
+      "Read(//c/Users/jay71/Downloads/website/**)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"about: %{http_code}\\\\n\" http://localhost:3000/about)",
+      "Bash(curl -s -o /dev/null -w \"contact: %{http_code}\\\\n\" http://localhost:3000/contact)"
     ]
   }
 }

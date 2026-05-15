@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Mail, Phone, MapPin, CheckCircle, Send, Loader2 } from 'lucide-react';
 import PageHeroDecor from '../components/PageHeroDecor';
 
@@ -181,6 +182,47 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
+              {/* Animated Brand Logo Card */}
+              <div className="bg-gradient-to-br from-[#1a472a] to-[#2d6a4f] rounded-2xl p-6 text-white card-shimmer flex flex-col items-center text-center">
+                <div className="relative flex items-center justify-center mb-4" style={{ width: 160, height: 160 }}>
+                  {/* Outer spinning gradient ring */}
+                  <div
+                    className="logo-ring-spin absolute rounded-full"
+                    style={{
+                      inset: '-8px',
+                      background: 'conic-gradient(from 0deg, transparent 20%, rgba(82,183,136,0.9) 45%, rgba(212,160,23,0.8) 65%, transparent 85%)',
+                    }}
+                  />
+                  {/* Counter-spinning dashed ring */}
+                  <div
+                    className="logo-ring-rev absolute rounded-full"
+                    style={{ inset: '4px', border: '2px dashed rgba(255,255,255,0.3)' }}
+                  />
+                  {/* Ping ring 1 */}
+                  <div
+                    className="logo-ping absolute rounded-full"
+                    style={{ inset: '0', border: '2px solid rgba(82,183,136,0.6)' }}
+                  />
+                  {/* Ping ring 2 */}
+                  <div
+                    className="logo-ping-2 absolute rounded-full"
+                    style={{ inset: '0', border: '2px solid rgba(212,160,23,0.4)' }}
+                  />
+                  {/* Logo */}
+                  <div className="relative rounded-full bg-white shadow-xl overflow-hidden logo-float logo-glow flex items-center justify-center" style={{ width: 140, height: 140 }}>
+                    <Image
+                      src="/images/logo.png"
+                      alt="Shritik Enterprises LLP"
+                      width={132}
+                      height={137}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
+                <p className="font-serif font-bold text-lg text-white leading-tight">Shritik Enterprises LLP</p>
+                <p className="text-sm text-green-200 mt-1 uppercase tracking-wider font-medium">Manufacturer &amp; Exporter</p>
+              </div>
+
               <div className="bg-[#f8fdf9] border border-green-100 rounded-2xl p-6 card-shimmer">
                 <h3 className="font-semibold text-[#1a472a] mb-4">Contact Information</h3>
                 <div className="space-y-4">

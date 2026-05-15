@@ -80,14 +80,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image
-              src="/images/logo.png"
-              alt="Shritik Enterprises LLP"
-              width={52}
-              height={52}
-              className="rounded-full drop-shadow-md"
-              priority
-            />
+            <div className="w-11 h-11 rounded-full border-2 border-gray-200 overflow-hidden flex-shrink-0 shadow-sm">
+              <Image
+                src="/images/logo.png"
+                alt="Shritik Enterprises LLP"
+                width={44}
+                height={44}
+                className="w-full h-full object-contain"
+                priority
+              />
+            </div>
             <div>
               <div className="font-serif font-bold text-primary-dark text-[15px] leading-tight">Shritik Enterprises</div>
               <div className="text-[10px] text-gray-500 font-medium tracking-wide leading-none">LLP &bull; MANUFACTURER &amp; EXPORTER</div>

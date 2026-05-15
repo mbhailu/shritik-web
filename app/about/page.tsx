@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle, Target, Eye, Heart, Globe, Shield, Star } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import PageHeroDecor from '../components/PageHeroDecor';
@@ -55,17 +56,67 @@ export default function AboutPage() {
       <div className="page-hero-animated">
         <PageHeroDecor />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="breadcrumb ph-breadcrumb">
-            <Link href="/">Home</Link>
-            <span>/</span>
-            <span className="text-white">About Us</span>
+          <div className="grid lg:grid-cols-[1fr,auto] gap-12 items-center">
+            <div>
+              <div className="breadcrumb ph-breadcrumb">
+                <Link href="/">Home</Link>
+                <span>/</span>
+                <span className="text-white">About Us</span>
+              </div>
+              <h1 className="ph-title font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
+                About Shritik Enterprises LLP
+              </h1>
+              <p className="ph-desc text-green-100 text-lg max-w-2xl">
+                An India-based manufacturer and exporter committed to delivering premium food ingredients to global buyers with consistency and care.
+              </p>
+            </div>
+
+            {/* Animated Logo Showcase */}
+            <div className="hidden lg:flex items-center justify-center ph-desc">
+              <div className="relative flex items-center justify-center w-[220px] h-[220px]">
+                {/* Outer spinning gradient ring */}
+                <div
+                  className="logo-ring-spin absolute rounded-full"
+                  style={{
+                    inset: '-10px',
+                    background: 'conic-gradient(from 0deg, transparent 20%, #52b788 45%, #d4a017 65%, transparent 85%)',
+                    borderRadius: '50%',
+                  }}
+                />
+                {/* Inner counter-spinning dashed ring */}
+                <div
+                  className="logo-ring-rev absolute rounded-full"
+                  style={{
+                    inset: '4px',
+                    border: '2px dashed rgba(82,183,136,0.45)',
+                  }}
+                />
+                {/* Ping ring 1 */}
+                <div
+                  className="logo-ping absolute rounded-full"
+                  style={{ inset: '0', border: '2px solid rgba(82,183,136,0.5)' }}
+                />
+                {/* Ping ring 2 */}
+                <div
+                  className="logo-ping-2 absolute rounded-full"
+                  style={{ inset: '0', border: '2px solid rgba(212,160,23,0.35)' }}
+                />
+                {/* White mask to hide gradient bleed */}
+                <div className="absolute rounded-full bg-white/10" style={{ inset: '2px' }} />
+                {/* Logo */}
+                <div className="relative rounded-full bg-white shadow-2xl overflow-hidden logo-float logo-glow flex items-center justify-center" style={{ width: 180, height: 180 }}>
+                  <Image
+                    src="/images/logo.png"
+                    alt="Shritik Enterprises LLP"
+                    width={170}
+                    height={176}
+                    className="object-contain w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="ph-title font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
-            About Shritik Enterprises LLP
-          </h1>
-          <p className="ph-desc text-green-100 text-lg max-w-2xl">
-            An India-based manufacturer and exporter committed to delivering premium food ingredients to global buyers with consistency and care.
-          </p>
         </div>
       </div>
 

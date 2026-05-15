@@ -692,3 +692,52 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .slide-counter-enter {
   animation: slideCounterFade 0.4s ease-out 0.3s both;
 }
+
+/* ============================================================
+   LOGO ANIMATIONS (navbar, about, contact)
+   ============================================================ */
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes logoRingRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes logoRingRotateReverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes logoPing {
+  0%   { transform: scale(1);   opacity: 0.65; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@keyframes logoGlowPulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(45,106,79,0.35)) drop-shadow(0 0 12px rgba(45,106,79,0.15)); }
+  50%       { filter: drop-shadow(0 0 18px rgba(45,106,79,0.65)) drop-shadow(0 0 6px rgba(212,160,23,0.35)); }
+}
+
+@keyframes logoNavHover {
+  0%, 100% { filter: drop-shadow(0 2px 6px rgba(45,106,79,0.3)); }
+  50%       { filter: drop-shadow(0 2px 12px rgba(45,106,79,0.6)); }
+}
+
+.logo-float      { animation: logoFloat 4s ease-in-out infinite; }
+.logo-glow       { animation: logoGlowPulse 3s ease-in-out infinite; }
+.logo-ring-spin  { animation: logoRingRotate 8s linear infinite; }
+.logo-ring-rev   { animation: logoRingRotateReverse 5s linear infinite; }
+.logo-ping       { animation: logoPing 2.5s ease-out infinite; }
+.logo-ping-2     { animation: logoPing 2.5s ease-out 1.25s infinite; }
+.logo-nav-glow   { animation: logoNavHover 2.5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-float, .logo-glow, .logo-ring-spin, .logo-ring-rev,
+  .logo-ping, .logo-ping-2, .logo-nav-glow {
+    animation: none !important;
+  }
+}
