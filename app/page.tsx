@@ -277,13 +277,13 @@ export default function HomePage() {
             {/* Product mini-grid — pops in with stagger */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { bg: 'bg-[#f0fdf4]', border: 'border-green-100',  icon: '/images/cashew-icon.png', title: 'Cashew Kernels',    sub: 'W180 to W450 and all splits — the full range', head: 'text-[#1a472a]', mt: '' },
-                { bg: 'bg-purple-50',  border: 'border-purple-100', icon: '🧅', title: 'Dehydrated Onion',  sub: 'White & red, all forms',                          head: 'text-purple-900', mt: 'mt-6' },
-                { bg: 'bg-orange-50',  border: 'border-orange-100', icon: '🧄', title: 'Dehydrated Garlic', sub: 'High allicin, all forms',                          head: 'text-orange-900', mt: '' },
-                { bg: 'bg-amber-50',   border: 'border-amber-100',  icon: '🫚', title: 'Dehydrated Ginger', sub: 'Natural gingerol retained',                        head: 'text-amber-900',  mt: 'mt-6' },
+                { bg: 'bg-[#f0fdf4]', border: 'border-green-100',  icon: '/images/cashew-icon.png', title: 'Cashew Kernels',    sub: 'W180 to W450 and all splits — the full range', head: 'text-[#1a472a]', mt: '', href: '/products/cashew-kernels' },
+                { bg: 'bg-purple-50',  border: 'border-purple-100', icon: '🧅', title: 'Dehydrated Onion',  sub: 'White & red, all forms',                          head: 'text-purple-900', mt: 'mt-6', href: '/products/dehydrated-onion' },
+                { bg: 'bg-orange-50',  border: 'border-orange-100', icon: '🧄', title: 'Dehydrated Garlic', sub: 'High allicin, all forms',                          head: 'text-orange-900', mt: '', href: '/products/dehydrated-garlic' },
+                { bg: 'bg-amber-50',   border: 'border-amber-100',  icon: '🫚', title: 'Dehydrated Ginger', sub: 'Natural gingerol retained',                        head: 'text-amber-900',  mt: 'mt-6', href: '/products/dehydrated-ginger' },
               ].map((card, i) => (
                 <ScrollReveal key={card.title} animation="pop" delay={i * 100} className={card.mt}>
-                  <div className={`${card.bg} rounded-2xl p-6 border ${card.border} card-hover h-full`}>
+                  <Link href={card.href} className={`${card.bg} rounded-2xl p-6 border ${card.border} card-hover h-full block cursor-pointer`}>
                     <div className="text-3xl mb-3">
                       {card.icon.startsWith('/') ? (
                         <img src={card.icon} alt={card.title} className="w-9 h-9" />
@@ -291,7 +291,7 @@ export default function HomePage() {
                     </div>
                     <h3 className={`font-semibold ${card.head} mb-2`}>{card.title}</h3>
                     <p className="text-sm text-gray-600">{card.sub}</p>
-                  </div>
+                  </Link>
                 </ScrollReveal>
               ))}
             </div>
@@ -316,7 +316,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, i) => (
               <ScrollReveal key={product.name} animation="up" delay={i * 100}>
-                <div className={`bg-gradient-to-b ${product.color} border ${product.border} rounded-2xl p-6 product-card-3d flex flex-col h-full`}>
+                <Link href={product.href} className={`bg-gradient-to-b ${product.color} border ${product.border} rounded-2xl p-6 product-card-3d flex flex-col h-full cursor-pointer block`}>
                   <div className="text-4xl mb-4">
                     {product.icon.startsWith('/')
                       ? <img src={product.icon} alt={product.name} className="w-10 h-10" />
@@ -329,10 +329,10 @@ export default function HomePage() {
                       <span key={tag} className={`px-2 py-0.5 rounded-full text-xs font-semibold ${product.badge}`}>{tag}</span>
                     ))}
                   </div>
-                  <Link href={product.href} className="flex items-center gap-2 text-[#2d6a4f] font-semibold text-sm hover:gap-3 transition-all">
+                  <span className="flex items-center gap-2 text-[#2d6a4f] font-semibold text-sm group-hover:gap-3 transition-all">
                     View Details <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+                  </span>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
