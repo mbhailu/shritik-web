@@ -72,7 +72,7 @@ export default function AboutPage() {
             </div>
 
             {/* Animated Logo Showcase */}
-            <div className="hidden lg:flex items-center justify-center ph-desc">
+            <div className="flex items-center justify-center ph-desc mt-8 lg:mt-0">
               <div className="relative flex items-center justify-center w-[220px] h-[220px]">
                 {/* Outer spinning gradient ring */}
                 <div
