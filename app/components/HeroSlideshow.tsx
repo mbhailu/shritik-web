@@ -9,8 +9,10 @@ const FLASH_DURATION = 580;
 
 const slides = [
   { src: '/images/slide-5.png', label: 'Premium Cashew Kernels',   sub: 'W180–W450 · All Grades & Splits'    },
+  { src: '/images/slide-8.png', label: 'Fresh Cashew Harvest',     sub: 'From Orchard to Global Markets'     },
   { src: '/images/slide-1.png', label: 'Dehydrated Red Onion',     sub: 'Powder · Flakes · Granules'          },
   { src: '/images/slide-2.png', label: 'Dehydrated Garlic',        sub: 'Powder · Flakes · Granules'          },
+  { src: '/images/slide-9.png', label: 'Premium Raw Cashews',      sub: 'Whole Kernels · Natural & Pure'      },
   { src: '/images/slide-4.png', label: 'Moringa Leaf Powder',      sub: 'Nutrient-Rich Superfood Export'      },
   { src: '/images/slide-3.png', label: 'Dehydrated Beetroot',      sub: 'Powder & Flakes'                     },
   { src: '/images/slide-7.png', label: 'Cashew Processing Line',   sub: 'In-House Manufacturing'              },
