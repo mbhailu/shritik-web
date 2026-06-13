@@ -9,6 +9,9 @@ const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour per IP
 // In-memory rate limit store (resets on cold start, acceptable for contact form)
 const ipRateMap = new Map<string, { count: number; resetAt: number }>();
 
+// Track consumed tokens to prevent replay attacks
+const usedTokenSigs = new Map<string, number>(); // sig → expiry unix seconds
+
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
   const entry = ipRateMap.get(ip);
@@ -47,6 +50,26 @@ function verifyToken(token: string, secret: string): boolean {
   }
 }
 
+function isTokenReplayed(token: string): boolean {
+  const parts = token.split('.');
+  if (parts.length !== 3) return false;
+  const [, , hmac] = parts;
+  // Purge expired entries opportunistically
+  const now = Math.floor(Date.now() / 1000);
+  for (const [sig, exp] of usedTokenSigs.entries()) {
+    if (now > exp) usedTokenSigs.delete(sig);
+  }
+  return usedTokenSigs.has(hmac);
+}
+
+function consumeToken(token: string): void {
+  const parts = token.split('.');
+  if (parts.length !== 3) return;
+  const [timestamp, , hmac] = parts;
+  const ts = parseInt(timestamp, 10);
+  usedTokenSigs.set(hmac, isNaN(ts) ? 0 : ts + TOKEN_TTL_SECONDS);
+}
+
 function escapeHtml(str: string): string {
   return str
     .replace(/&/g, '&amp;')
@@ -72,7 +95,43 @@ const VALID_PRODUCTS = new Set([
   'Other',
 ]);
 
+const ALLOWED_ORIGINS = new Set(
+  [
+    'https://www.shritikenterprises.com',
+    'https://shritikenterprises.com',
+    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : null,
+    process.env.NEXT_PUBLIC_SITE_URL ?? null,
+  ].filter(Boolean) as string[]
+);
+
+function isCorsAllowed(origin: string | null): boolean {
+  // No origin header = same-origin or server-to-server request
+  if (!origin) return true;
+  return ALLOWED_ORIGINS.has(origin);
+}
+
+export async function OPTIONS(req: NextRequest) {
+  const origin = req.headers.get('origin');
+  if (!isCorsAllowed(origin)) {
+    return new NextResponse(null, { status: 403 });
+  }
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': origin ?? '',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Max-Age': '86400',
+    },
+  });
+}
+
 export async function POST(req: NextRequest) {
+  const origin = req.headers.get('origin');
+  if (!isCorsAllowed(origin)) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
+
   const secret = process.env.CONTACT_FORM_SECRET;
   const gmailUser = process.env.GMAIL_USER;
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
@@ -118,6 +177,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Reject replayed tokens
+  if (isTokenReplayed(token)) {
+    return NextResponse.json(
+      { error: 'Form token has already been used. Please refresh and try again.' },
+      { status: 403 }
+    );
+  }
+
   // Server-side validation
   const errors: Record<string, string> = {};
 
@@ -153,6 +220,9 @@ export async function POST(req: NextRequest) {
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ errors }, { status: 422 });
   }
+
+  // Mark token as consumed before sending to prevent double-submit race
+  consumeToken(token);
 
   // Sanitize all fields
   const safe = {
@@ -252,8 +322,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error('Email send failed:', err);
+  } catch {
+    console.error('Contact form: email delivery failed');
     return NextResponse.json(
       { error: 'Failed to send message. Please try again or email us directly.' },
       { status: 500 }
