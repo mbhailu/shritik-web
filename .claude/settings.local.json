@@ -7,7 +7,10 @@
       "Bash(node -e ' *)",
       "Bash(curl -s http://localhost:3000)",
       "Bash(curl -s -o /dev/null -w \"about: %{http_code}\\\\n\" http://localhost:3000/about)",
-      "Bash(curl -s -o /dev/null -w \"contact: %{http_code}\\\\n\" http://localhost:3000/contact)"
+      "Bash(curl -s -o /dev/null -w \"contact: %{http_code}\\\\n\" http://localhost:3000/contact)",
+      "Bash(cp /root/.claude/uploads/af8c2db1-9284-58a9-a398-a5560b1a9bde/9c4b7150-10CD36B16BED4541B0AF3A5D9435A38C.png /home/user/shritik-web/public/images/slide-6.png)",
+      "Bash(cp /root/.claude/uploads/af8c2db1-9284-58a9-a398-a5560b1a9bde/fc6901bd-50BA98FC41CB449F8490CAD6F6ED12F7.png /home/user/shritik-web/public/images/slide-7.png)",
+      "Bash(cp /root/.claude/uploads/af8c2db1-9284-58a9-a398-a5560b1a9bde/c96eac11-33CA5246EA4B446EBD5667D7B996D22C.png /home/user/shritik-web/public/images/slide-10.png)"
     ]
   }
 }

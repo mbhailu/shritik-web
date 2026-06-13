@@ -17,6 +17,7 @@ const slides = [
   { src: '/images/slide-3.png', label: 'Dehydrated Beetroot',      sub: 'Powder & Flakes'                     },
   { src: '/images/slide-7.png', label: 'Cashew Processing Line',   sub: 'In-House Manufacturing'              },
   { src: '/images/slide-6.png', label: 'GMP Processing Facility',  sub: 'Certified Quality Controls'          },
+  { src: '/images/slide-10.png', label: 'Processing Equipment',    sub: 'State-of-the-Art Machinery'          },
 ];
 
 export default function HeroSlideshow() {

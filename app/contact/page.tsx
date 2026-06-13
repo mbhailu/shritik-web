@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Mail, Phone, MapPin, CheckCircle, Send, Loader2 } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin, CheckCircle, Send, Loader2, AlertCircle } from 'lucide-react';
 import PageHeroDecor from '../components/PageHeroDecor';
 
 type FormData = {
@@ -18,6 +18,10 @@ type FormData = {
 };
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
+
+const EMPTY_FORM: FormData = {
+  name: '', company: '', country: '', email: '', phone: '', product: '', quantity: '', message: '',
+};
 
 const products = [
   'Cashew Kernels (W-Grades)',
@@ -36,7 +40,7 @@ function validate(data: FormData): FormErrors {
   if (!data.company.trim()) errors.company = 'Company is required';
   if (!data.country.trim()) errors.country = 'Country is required';
   if (!data.email.trim()) errors.email = 'Email is required';
-  else if (!/\S+@\S+\.\S+/.test(data.email)) errors.email = 'Invalid email address';
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = 'Invalid email address';
   if (!data.phone.trim()) errors.phone = 'Phone number is required';
   if (!data.product) errors.product = 'Please select a product';
   if (!data.message.trim()) errors.message = 'Message is required';
@@ -44,14 +48,32 @@ function validate(data: FormData): FormErrors {
 }
 
 export default function ContactPage() {
-  const [form, setForm] = useState<FormData>({
-    name: '', company: '', country: '', email: '', phone: '', product: '', quantity: '', message: '',
-  });
+  const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const fetchToken = useCallback(async () => {
+    try {
+      const res = await fetch('/api/contact/token');
+      if (res.ok) {
+        const data = await res.json();
+        setToken(data.token as string);
+      }
+    } catch {
+      // Will surface as an error on submit attempt
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchToken();
+  }, [fetchToken]);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormData]) setErrors((prev) => ({ ...prev, [name]: undefined }));
@@ -59,12 +81,56 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
+
     const errs = validate(form);
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
+
+    if (!token) {
+      setSubmitError('Security token not loaded. Please refresh the page and try again.');
+      return;
+    }
+
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, token }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSubmitted(true);
+        setToken(null); // token consumed — prevent reuse
+      } else if (res.status === 422 && data.errors) {
+        setErrors(data.errors as FormErrors);
+      } else if (res.status === 403) {
+        setSubmitError('Form token expired. Please try again.');
+        await fetchToken(); // get a fresh token
+      } else if (res.status === 429) {
+        setSubmitError('Too many submissions. Please try again in an hour.');
+      } else {
+        setSubmitError((data.error as string) || 'Failed to send. Please try again.');
+      }
+    } catch {
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleReset = async () => {
+    setSubmitted(false);
+    setForm(EMPTY_FORM);
+    setErrors({});
+    setSubmitError(null);
+    await fetchToken(); // fresh token for next submission
   };
 
   return (
@@ -101,10 +167,7 @@ export default function ContactPage() {
                     Thank you for reaching out. Our export team will review your inquiry and respond within 24 hours.
                   </p>
                   <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setForm({ name: '', company: '', country: '', email: '', phone: '', product: '', quantity: '', message: '' });
-                    }}
+                    onClick={handleReset}
                     className="btn-primary success-text"
                     style={{ animationDelay: '0.7s' }}
                   >
@@ -114,34 +177,42 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
                   <h2 className="font-serif text-2xl font-bold text-[#1a472a] mb-6">Send Export Inquiry</h2>
+
+                  {submitError && (
+                    <div className="flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      {submitError}
+                    </div>
+                  )}
+
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="form-label">Full Name *</label>
-                      <input name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Your full name" />
+                      <input name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Your full name" maxLength={100} />
                       {errors.name && <p className="form-error">{errors.name}</p>}
                     </div>
                     <div>
                       <label className="form-label">Company Name *</label>
-                      <input name="company" value={form.company} onChange={handleChange} className="form-input" placeholder="Your company name" />
+                      <input name="company" value={form.company} onChange={handleChange} className="form-input" placeholder="Your company name" maxLength={200} />
                       {errors.company && <p className="form-error">{errors.company}</p>}
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="form-label">Country *</label>
-                      <input name="country" value={form.country} onChange={handleChange} className="form-input" placeholder="Your country" />
+                      <input name="country" value={form.country} onChange={handleChange} className="form-input" placeholder="Your country" maxLength={100} />
                       {errors.country && <p className="form-error">{errors.country}</p>}
                     </div>
                     <div>
                       <label className="form-label">Email Address *</label>
-                      <input name="email" type="email" value={form.email} onChange={handleChange} className="form-input" placeholder="your@email.com" />
+                      <input name="email" type="email" value={form.email} onChange={handleChange} className="form-input" placeholder="your@email.com" maxLength={254} />
                       {errors.email && <p className="form-error">{errors.email}</p>}
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="form-label">Phone / WhatsApp *</label>
-                      <input name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="+1 234 567 8900" />
+                      <input name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="+1 234 567 8900" maxLength={50} />
                       {errors.phone && <p className="form-error">{errors.phone}</p>}
                     </div>
                     <div>
@@ -155,7 +226,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="form-label">Quantity Required (optional)</label>
-                    <input name="quantity" value={form.quantity} onChange={handleChange} className="form-input" placeholder="e.g., 5 MT per month" />
+                    <input name="quantity" value={form.quantity} onChange={handleChange} className="form-input" placeholder="e.g., 5 MT per month" maxLength={200} />
                   </div>
                   <div>
                     <label className="form-label">Your Message / Requirements *</label>
@@ -166,6 +237,7 @@ export default function ContactPage() {
                       rows={5}
                       className="form-input resize-none"
                       placeholder="Tell us about your product requirements, grade preferences, packaging needs, certifications required..."
+                      maxLength={5000}
                     />
                     {errors.message && <p className="form-error">{errors.message}</p>}
                   </div>
