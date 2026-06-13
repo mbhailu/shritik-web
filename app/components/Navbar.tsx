@@ -68,10 +68,14 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <Phone size={11} />
-              <a href="tel:+91XXXXXXXXXX" className="hover:text-accent">+91-XXXXXXXXXX</a>
+              <a href="tel:+912764357360" className="hover:text-accent">+91-2764-357360</a>
+            </span>
+            <span className="flex items-center gap-1">
+              <Phone size={11} />
+              <a href="tel:+919925246360" className="hover:text-accent">+91-9925246360</a>
             </span>
             <span className="text-green-400">|</span>
-            <a href="mailto:info@shritikenterprises.com" className="hover:text-accent transition-colors">info@shritikenterprises.com</a>
+            <a href="mailto:info@shritikllp.com" className="hover:text-accent transition-colors">info@shritikllp.com</a>
           </div>
         </div>
       </div>

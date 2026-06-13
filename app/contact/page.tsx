@@ -302,15 +302,15 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Address</p>
-                      <p className="text-sm text-gray-600">India</p>
+                      <p className="text-sm text-gray-600">73, Subhangen Bunglows, Kalol,<br />Dist - Gandhinagar 382721, Gujarat, India</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Email</p>
-                      <a href="mailto:info@shritikenterprises.com" className="text-sm text-[#2d6a4f] hover:text-[#1a472a]">
-                        info@shritikenterprises.com
+                      <a href="mailto:info@shritikllp.com" className="text-sm text-[#2d6a4f] hover:text-[#1a472a]">
+                        info@shritikllp.com
                       </a>
                     </div>
                   </div>
@@ -318,7 +318,8 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Phone / WhatsApp</p>
-                      <a href="tel:+91XXXXXXXXXX" className="text-sm text-[#2d6a4f] hover:text-[#1a472a]">+91-XXXXXXXXXX</a>
+                      <a href="tel:+912764357360" className="text-sm text-[#2d6a4f] hover:text-[#1a472a] block">+91-2764-357360</a>
+                      <a href="tel:+919925246360" className="text-sm text-[#2d6a4f] hover:text-[#1a472a] block">+91-9925246360</a>
                     </div>
                   </div>
                 </div>

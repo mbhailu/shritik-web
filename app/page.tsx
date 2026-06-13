@@ -123,11 +123,15 @@ const organizationJsonLd = {
   logo: "https://www.shritikenterprises.com/logo.png",
   description:
     "India-based manufacturer and exporter of premium cashew kernels, dehydrated onion, garlic, and ginger. Certified with FSSAI, APEDA, IEC, ISO, Halal & Kosher.",
-  email: "info@shritikenterprises.com",
+  email: "info@shritikllp.com",
+  telephone: ["+912764357360", "+919925246360"],
   address: {
     "@type": "PostalAddress",
-    addressCountry: "IN",
+    streetAddress: "73, Subhangen Bunglows",
+    addressLocality: "Kalol",
     addressRegion: "Gujarat",
+    postalCode: "382721",
+    addressCountry: "IN",
   },
   sameAs: [],
   knowsAbout: [

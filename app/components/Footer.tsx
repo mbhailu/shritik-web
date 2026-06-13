@@ -104,15 +104,18 @@ export default function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">India</span>
+                <span className="text-gray-400 text-sm">73, Subhangen Bunglows, Kalol,<br />Dist - Gandhinagar 382721, India</span>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@shritikenterprises.com" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors">info@shritikenterprises.com</a>
+                <a href="mailto:info@shritikllp.com" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors">info@shritikllp.com</a>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
-                <a href="tel:+91XXXXXXXXXX" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors">+91-XXXXXXXXXX</a>
+                <div>
+                  <a href="tel:+912764357360" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors block">+91-2764-357360</a>
+                  <a href="tel:+919925246360" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors block">+91-9925246360</a>
+                </div>
               </div>
             </div>
             <div className="bg-[#1a472a] border border-[#2d6a4f] rounded-xl p-4">
