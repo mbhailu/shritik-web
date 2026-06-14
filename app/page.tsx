@@ -120,11 +120,18 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Shritik Enterprises LLP",
   url: "https://www.shritikenterprises.com",
-  logo: "https://www.shritikenterprises.com/logo.png",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.shritikenterprises.com/logo.png",
+    width: 512,
+    height: 512,
+  },
   description:
-    "India-based manufacturer and exporter of premium cashew kernels, dehydrated onion, garlic, and ginger. Certified with FSSAI, APEDA, IEC, ISO, Halal & Kosher.",
+    "India-based manufacturer and exporter of premium cashew kernels, dehydrated onion, garlic, and ginger. Certified with FSSAI, APEDA, IEC, ISO, Halal & Kosher. Serving 30+ countries.",
   email: "info@shritikllp.com",
   telephone: ["+912764357360", "+919925246360"],
+  foundingDate: "2014",
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 50 },
   address: [
     {
       "@type": "PostalAddress",
@@ -145,15 +152,28 @@ const organizationJsonLd = {
       addressCountry: "IN",
     },
   ],
-  sameAs: [],
+  sameAs: ["https://www.shritikenterprises.com"],
   knowsAbout: [
     "Cashew Kernels Export",
-    "Dehydrated Onion",
-    "Dehydrated Garlic",
-    "Dehydrated Ginger",
-    "Food Ingredients Export",
-    "Private Label Food",
+    "Dehydrated Onion Export",
+    "Dehydrated Garlic Export",
+    "Dehydrated Ginger Export",
+    "Food Ingredients Export from India",
+    "Private Label Food Manufacturing",
+    "FSSAI Certified Food Export",
+    "APEDA Registered Export",
+    "Halal Kosher Certified Foods",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Indian Food Ingredients Export Catalog",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Cashew Kernels", url: "https://www.shritikenterprises.com/products/cashew-kernels" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Onion", url: "https://www.shritikenterprises.com/products/dehydrated-onion" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Garlic", url: "https://www.shritikenterprises.com/products/dehydrated-garlic" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Ginger", url: "https://www.shritikenterprises.com/products/dehydrated-ginger" } },
+    ],
+  },
 };
 
 const breadcrumbJsonLd = {

@@ -1,10 +1,15 @@
 import { ImageResponse } from 'next/og';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export const alt = 'Shritik Enterprises LLP — Premium Indian Food Ingredients Exporter';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default function Image() {
+  const logoBuffer = readFileSync(join(process.cwd(), 'public', 'logo.png'));
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString('base64')}`;
+
   const products = ['Cashew Kernels', 'Dehydrated Onion', 'Dehydrated Garlic', 'Dehydrated Ginger'];
   const certs = ['FSSAI', 'APEDA', 'IEC', 'ISO', 'Halal', 'Kosher'];
 
@@ -46,20 +51,38 @@ export default function Image() {
             width: '100%',
           }}
         >
-          {/* Company name */}
+          {/* Logo + Company name row */}
           <div
             style={{
-              color: '#f0c040',
-              fontSize: '62px',
-              fontWeight: '700',
-              letterSpacing: '-1.5px',
-              textAlign: 'center',
-              lineHeight: 1.1,
-              marginBottom: '14px',
               display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: '28px',
+              marginBottom: '18px',
             }}
           >
-            Shritik Enterprises LLP
+            {/* Logo */}
+            <img
+              src={logoSrc}
+              width={110}
+              height={110}
+              style={{ borderRadius: '16px', objectFit: 'contain', background: 'white', padding: '6px' }}
+            />
+            {/* Company name */}
+            <div
+              style={{
+                color: '#f0c040',
+                fontSize: '56px',
+                fontWeight: '700',
+                letterSpacing: '-1.5px',
+                lineHeight: 1.1,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <span style={{ display: 'flex' }}>Shritik Enterprises</span>
+              <span style={{ display: 'flex', fontSize: '42px', color: 'rgba(240,192,64,0.80)' }}>LLP</span>
+            </div>
           </div>
 
           {/* Gold divider */}
@@ -69,7 +92,7 @@ export default function Image() {
               height: '3px',
               background: '#d4a017',
               borderRadius: '2px',
-              marginBottom: '22px',
+              marginBottom: '20px',
               display: 'flex',
             }}
           />
@@ -78,10 +101,10 @@ export default function Image() {
           <div
             style={{
               color: 'rgba(255,255,255,0.90)',
-              fontSize: '29px',
+              fontSize: '26px',
               fontWeight: '400',
               textAlign: 'center',
-              marginBottom: '42px',
+              marginBottom: '36px',
               letterSpacing: '0.2px',
               display: 'flex',
             }}
@@ -94,7 +117,7 @@ export default function Image() {
             style={{
               display: 'flex',
               gap: '14px',
-              marginBottom: '40px',
+              marginBottom: '32px',
               flexWrap: 'wrap',
               justifyContent: 'center',
             }}

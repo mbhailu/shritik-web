@@ -51,9 +51,56 @@ const applications = [
   { emoji: '💊', name: 'Health Supplements', desc: 'High-gingerol powder for nutraceuticals, capsules, and wellness blends.' },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dehydrated Ginger", item: "https://www.shritikenterprises.com/products/dehydrated-ginger" },
+  ],
+};
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dehydrated Ginger",
+  description: "Dehydrated ginger slices, flakes, granules, and powder retaining natural gingerol. Controlled dehydration preserves essential oils and characteristic heat. Processed in India.",
+  brand: { "@type": "Brand", name: "Shritik Enterprises LLP" },
+  manufacturer: {
+    "@type": "Organization",
+    name: "Shritik Enterprises LLP",
+    url: "https://www.shritikenterprises.com",
+  },
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  category: "Dehydrated Spices",
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Forms", value: "Slices, Flakes, Granules, Powder" },
+    { "@type": "PropertyValue", name: "Key Compound", value: "High Gingerol Content" },
+    { "@type": "PropertyValue", name: "Moisture", value: "Max 8%" },
+    { "@type": "PropertyValue", name: "Shelf Life", value: "18–24 Months" },
+    { "@type": "PropertyValue", name: "Certifications", value: "FSSAI, APEDA, Halal, Kosher" },
+  ],
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "USD",
+    seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
+    url: "https://www.shritikenterprises.com/products/dehydrated-ginger",
+  },
+};
+
 export default function DehydratedGingerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="page-hero" style={{ background: 'linear-gradient(135deg, #7c2d12 0%, #c2410c 60%, #ea580c 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="breadcrumb">

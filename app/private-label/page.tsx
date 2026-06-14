@@ -68,9 +68,22 @@ const process = [
   { step: '06', title: 'Dispatch', desc: 'Shipment sent with full documentation. Tracking provided throughout.' },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "Private Label", item: "https://www.shritikenterprises.com/private-label" },
+  ],
+};
+
 export default function PrivateLabelPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Animated Page Hero */}
       <div className="page-hero-animated">
         <PageHeroDecor />

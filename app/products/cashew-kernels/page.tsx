@@ -248,9 +248,56 @@ function GradeCard({ grade, index }: { grade: Grade; index: number }) {
   );
 }
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
+    { "@type": "ListItem", position: 3, name: "Cashew Kernels", item: "https://www.shritikenterprises.com/products/cashew-kernels" },
+  ],
+};
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Cashew Kernels",
+  description: "Premium cashew kernels in all internationally traded grades — W180, W210, W240, W320, W450, JH, LWP, splits and pieces. Sourced and processed in India.",
+  image: "https://www.shritikenterprises.com/images/cashew.png",
+  brand: { "@type": "Brand", name: "Shritik Enterprises LLP" },
+  manufacturer: {
+    "@type": "Organization",
+    name: "Shritik Enterprises LLP",
+    url: "https://www.shritikenterprises.com",
+  },
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  category: "Nuts & Seeds",
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Grades", value: "W180, W210, W240, W320, W450, SW320, LP, SP" },
+    { "@type": "PropertyValue", name: "Moisture", value: "Max 5%" },
+    { "@type": "PropertyValue", name: "Shelf Life", value: "12–18 Months" },
+    { "@type": "PropertyValue", name: "Certifications", value: "FSSAI, APEDA, Halal, Kosher, ISO" },
+  ],
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "USD",
+    seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
+    url: "https://www.shritikenterprises.com/products/cashew-kernels",
+  },
+};
+
 export default function CashewKernelsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Hero */}
       <div className="page-hero" style={{ background: 'linear-gradient(135deg, #78350f 0%, #b45309 60%, #d97706 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

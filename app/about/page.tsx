@@ -49,9 +49,22 @@ const milestones = [
   { year: '2024', title: 'Private Label', desc: 'Launched dedicated private label and co-packing services.' },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "About Us", item: "https://www.shritikenterprises.com/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Animated Page Hero */}
       <div className="page-hero-animated">
         <PageHeroDecor />

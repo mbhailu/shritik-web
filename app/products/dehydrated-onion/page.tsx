@@ -51,9 +51,56 @@ const applications = [
   ['Pizza & pasta sauces', 'Snack coatings & chips', 'Meat marinades & rubs'],
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dehydrated Onion", item: "https://www.shritikenterprises.com/products/dehydrated-onion" },
+  ],
+};
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dehydrated Onion",
+  description: "Dehydrated white and red onion in flakes, minced, granules, and powder. Consistent pungency, colour, and rehydration ratio — processed from fresh Indian onions.",
+  brand: { "@type": "Brand", name: "Shritik Enterprises LLP" },
+  manufacturer: {
+    "@type": "Organization",
+    name: "Shritik Enterprises LLP",
+    url: "https://www.shritikenterprises.com",
+  },
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  category: "Dehydrated Vegetables",
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Forms", value: "Flakes, Minced, Granules, Powder" },
+    { "@type": "PropertyValue", name: "Varieties", value: "White Onion, Red Onion" },
+    { "@type": "PropertyValue", name: "Moisture", value: "Max 6%" },
+    { "@type": "PropertyValue", name: "Shelf Life", value: "18–24 Months" },
+    { "@type": "PropertyValue", name: "Certifications", value: "FSSAI, APEDA, Halal, Kosher" },
+  ],
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "USD",
+    seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
+    url: "https://www.shritikenterprises.com/products/dehydrated-onion",
+  },
+};
+
 export default function DehydratedOnionPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="page-hero" style={{ background: 'linear-gradient(135deg, #581c87 0%, #7c3aed 60%, #a855f7 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="breadcrumb">

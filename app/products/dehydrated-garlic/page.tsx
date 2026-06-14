@@ -49,9 +49,56 @@ const applications = [
   ['Processed meats & sausages', 'Instant noodles & ready meals', 'Marinades & dry rubs'],
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dehydrated Garlic", item: "https://www.shritikenterprises.com/products/dehydrated-garlic" },
+  ],
+};
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dehydrated Garlic",
+  description: "Dehydrated garlic flakes, granules, minced, and powder with high allicin content. Low-temperature dehydration preserves flavour compounds. Processed in India.",
+  brand: { "@type": "Brand", name: "Shritik Enterprises LLP" },
+  manufacturer: {
+    "@type": "Organization",
+    name: "Shritik Enterprises LLP",
+    url: "https://www.shritikenterprises.com",
+  },
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  category: "Dehydrated Vegetables",
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Forms", value: "Flakes, Granules, Minced, Powder" },
+    { "@type": "PropertyValue", name: "Key Compound", value: "High Allicin Content" },
+    { "@type": "PropertyValue", name: "Moisture", value: "Max 6%" },
+    { "@type": "PropertyValue", name: "Shelf Life", value: "18–24 Months" },
+    { "@type": "PropertyValue", name: "Certifications", value: "FSSAI, APEDA, Halal, Kosher" },
+  ],
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "USD",
+    seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
+    url: "https://www.shritikenterprises.com/products/dehydrated-garlic",
+  },
+};
+
 export default function DehydratedGarlicPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <div className="page-hero" style={{ background: 'linear-gradient(135deg, #14532d 0%, #166534 60%, #16a34a 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="breadcrumb">
