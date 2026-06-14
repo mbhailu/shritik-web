@@ -301,8 +301,15 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-sm font-medium text-gray-900">Address</p>
+                      <p className="text-sm font-medium text-gray-900">Communication Address</p>
                       <p className="text-sm text-gray-600">73, Subhangen Bunglows, Kalol,<br />Dist - Gandhinagar 382721, Gujarat, India</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">Factory / Plant Address</p>
+                      <p className="text-sm text-gray-600">E-123, RIICO Industrial Area,<br />Swaroopganj, Aburoad,<br />Rajasthan - 307023, India</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

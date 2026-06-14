@@ -104,7 +104,17 @@ export default function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">73, Subhangen Bunglows, Kalol,<br />Dist - Gandhinagar 382721, India</span>
+                <div>
+                  <p className="text-xs text-[#52b788] font-semibold uppercase tracking-wide mb-0.5">Communication Address</p>
+                  <span className="text-gray-400 text-sm">73, Subhangen Bunglows, Kalol,<br />Dist - Gandhinagar 382721, India</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-xs text-[#52b788] font-semibold uppercase tracking-wide mb-0.5">Factory / Plant Address</p>
+                  <span className="text-gray-400 text-sm">E-123, RIICO Industrial Area,<br />Swaroopganj, Aburoad,<br />Rajasthan - 307023, India</span>
+                </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
