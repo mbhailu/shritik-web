@@ -97,8 +97,8 @@ const VALID_PRODUCTS = new Set([
 
 const ALLOWED_ORIGINS = new Set(
   [
-    'https://www.shritikenterprises.com',
-    'https://shritikenterprises.com',
+    'https://www.shritikllp.com',
+    'https://shritikllp.com',
     process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : null,
     process.env.NEXT_PUBLIC_SITE_URL ?? null,
   ].filter(Boolean) as string[]

@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     'dehydrated food manufacturer India',
     'FSSAI APEDA certified company India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/about' },
+  alternates: { canonical: 'https://www.shritikllp.com/about' },
   openGraph: {
     title: 'About Shritik Enterprises LLP — Indian Food Exporter',
     description: 'India-based manufacturer and exporter of premium cashew kernels and dehydrated food ingredients. FSSAI, APEDA, ISO, Halal & Kosher certified.',
-    url: 'https://www.shritikenterprises.com/about',
+    url: 'https://www.shritikllp.com/about',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'About Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -53,8 +53,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "About Us", item: "https://www.shritikenterprises.com/about" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "About Us", item: "https://www.shritikllp.com/about" },
   ],
 };
 

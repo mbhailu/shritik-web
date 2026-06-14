@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     'ginger for herbal tea supplier',
     'Halal Kosher ginger powder India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/products/dehydrated-ginger' },
+  alternates: { canonical: 'https://www.shritikllp.com/products/dehydrated-ginger' },
   openGraph: {
     title: 'Dehydrated Ginger Exporter India — Slices, Flakes & Powder',
     description: 'Dehydrated ginger slices, flakes, granules, and powder with natural gingerol retained. FSSAI, APEDA, Halal & Kosher certified. Exported from India.',
-    url: 'https://www.shritikenterprises.com/products/dehydrated-ginger',
+    url: 'https://www.shritikllp.com/products/dehydrated-ginger',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Dehydrated Ginger — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -55,9 +55,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
-    { "@type": "ListItem", position: 3, name: "Dehydrated Ginger", item: "https://www.shritikenterprises.com/products/dehydrated-ginger" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikllp.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dehydrated Ginger", item: "https://www.shritikllp.com/products/dehydrated-ginger" },
   ],
 };
 
@@ -70,7 +70,7 @@ const productJsonLd = {
   manufacturer: {
     "@type": "Organization",
     name: "Shritik Enterprises LLP",
-    url: "https://www.shritikenterprises.com",
+    url: "https://www.shritikllp.com",
   },
   countryOfOrigin: { "@type": "Country", name: "India" },
   category: "Dehydrated Spices",
@@ -86,7 +86,7 @@ const productJsonLd = {
     availability: "https://schema.org/InStock",
     priceCurrency: "USD",
     seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
-    url: "https://www.shritikenterprises.com/products/dehydrated-ginger",
+    url: "https://www.shritikllp.com/products/dehydrated-ginger",
   },
 };
 

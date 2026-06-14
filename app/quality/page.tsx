@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     'food quality control India export',
     'IEC certified exporter India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/quality' },
+  alternates: { canonical: 'https://www.shritikllp.com/quality' },
   openGraph: {
     title: 'Quality & Certifications — Shritik Enterprises LLP',
     description: 'FSSAI, APEDA, IEC, ISO, Halal & Kosher certified Indian food exporter. Rigorous QC at every production stage for cashews and dehydrated food.',
-    url: 'https://www.shritikenterprises.com/quality',
+    url: 'https://www.shritikllp.com/quality',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Quality & Certifications — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -103,8 +103,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Quality & Certifications", item: "https://www.shritikenterprises.com/quality" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Quality & Certifications", item: "https://www.shritikllp.com/quality" },
   ],
 };
 

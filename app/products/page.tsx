@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     'food ingredients export India',
     'bulk food ingredients wholesale India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/products' },
+  alternates: { canonical: 'https://www.shritikllp.com/products' },
   openGraph: {
     title: 'Products — Shritik Enterprises LLP',
     description: 'Cashew kernels (W180–W450), dehydrated onion, garlic, and ginger. All products manufactured in-house, certified, and available for global export.',
-    url: 'https://www.shritikenterprises.com/products',
+    url: 'https://www.shritikllp.com/products',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Food Products — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -101,8 +101,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikllp.com/products" },
   ],
 };
 

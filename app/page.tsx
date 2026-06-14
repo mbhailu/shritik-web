@@ -119,10 +119,10 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Shritik Enterprises LLP",
-  url: "https://www.shritikenterprises.com",
+  url: "https://www.shritikllp.com",
   logo: {
     "@type": "ImageObject",
-    url: "https://www.shritikenterprises.com/logo.png",
+    url: "https://www.shritikllp.com/logo.png",
     width: 512,
     height: 512,
   },
@@ -152,7 +152,7 @@ const organizationJsonLd = {
       addressCountry: "IN",
     },
   ],
-  sameAs: ["https://www.shritikenterprises.com"],
+  sameAs: ["https://www.shritikllp.com"],
   knowsAbout: [
     "Cashew Kernels Export",
     "Dehydrated Onion Export",
@@ -168,10 +168,10 @@ const organizationJsonLd = {
     "@type": "OfferCatalog",
     name: "Indian Food Ingredients Export Catalog",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Cashew Kernels", url: "https://www.shritikenterprises.com/products/cashew-kernels" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Onion", url: "https://www.shritikenterprises.com/products/dehydrated-onion" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Garlic", url: "https://www.shritikenterprises.com/products/dehydrated-garlic" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Ginger", url: "https://www.shritikenterprises.com/products/dehydrated-ginger" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Cashew Kernels", url: "https://www.shritikllp.com/products/cashew-kernels" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Onion", url: "https://www.shritikllp.com/products/dehydrated-onion" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Garlic", url: "https://www.shritikllp.com/products/dehydrated-garlic" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Dehydrated Ginger", url: "https://www.shritikllp.com/products/dehydrated-ginger" } },
     ],
   },
 };
@@ -179,14 +179,14 @@ const organizationJsonLd = {
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  url: "https://www.shritikenterprises.com",
+  url: "https://www.shritikllp.com",
   name: "Shritik Enterprises LLP",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
       urlTemplate:
-        "https://www.shritikenterprises.com/products?q={search_term_string}",
+        "https://www.shritikllp.com/products?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },

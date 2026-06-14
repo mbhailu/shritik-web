@@ -209,7 +209,7 @@ export default function Image() {
             display: 'flex',
           }}
         >
-          shritikenterprises.com
+          shritikllp.com
         </div>
 
         {/* Gold bottom accent bar */}

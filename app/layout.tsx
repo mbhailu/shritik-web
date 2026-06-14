@@ -5,7 +5,9 @@ import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import { Analytics } from "@vercel/analytics/next";
 
-const siteUrl = "https://www.shritikenterprises.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://www.shritikllp.com");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

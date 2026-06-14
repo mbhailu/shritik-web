@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     'phytosanitary certificate India export',
     'food export documentation India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/export' },
+  alternates: { canonical: 'https://www.shritikllp.com/export' },
   openGraph: {
     title: 'Export & Packaging — Shritik Enterprises LLP',
     description: 'Exporting cashew kernels and dehydrated food ingredients to 30+ countries. Full export documentation, flexible packaging, and logistics support.',
-    url: 'https://www.shritikenterprises.com/export',
+    url: 'https://www.shritikllp.com/export',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Export & Packaging — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -68,8 +68,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Export & Packaging", item: "https://www.shritikenterprises.com/export" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Export & Packaging", item: "https://www.shritikllp.com/export" },
   ],
 };
 

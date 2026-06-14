@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     'in-house cashew shelling grading',
     'temperature controlled food storage India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/infrastructure' },
+  alternates: { canonical: 'https://www.shritikllp.com/infrastructure' },
   openGraph: {
     title: 'Infrastructure — Shritik Enterprises LLP',
     description: 'Integrated cashew processing and dehydration plants in India. In-house manufacturing with on-site QC lab, controlled storage, and flexible packing lines.',
-    url: 'https://www.shritikenterprises.com/infrastructure',
+    url: 'https://www.shritikllp.com/infrastructure',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Manufacturing Infrastructure — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -51,8 +51,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Infrastructure", item: "https://www.shritikenterprises.com/infrastructure" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Infrastructure", item: "https://www.shritikllp.com/infrastructure" },
   ],
 };
 

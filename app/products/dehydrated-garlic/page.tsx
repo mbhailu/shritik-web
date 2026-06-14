@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     'high allicin garlic powder India',
     'Halal Kosher garlic powder India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/products/dehydrated-garlic' },
+  alternates: { canonical: 'https://www.shritikllp.com/products/dehydrated-garlic' },
   openGraph: {
     title: 'Dehydrated Garlic Exporter India — Flakes, Granules & Powder',
     description: 'Dehydrated garlic flakes, granules, minced, and powder with high allicin content. FSSAI, APEDA, Halal & Kosher certified. Exported from India.',
-    url: 'https://www.shritikenterprises.com/products/dehydrated-garlic',
+    url: 'https://www.shritikllp.com/products/dehydrated-garlic',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Dehydrated Garlic — Shritik Enterprises LLP' }],
   },
   twitter: {
@@ -53,9 +53,9 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikenterprises.com/products" },
-    { "@type": "ListItem", position: 3, name: "Dehydrated Garlic", item: "https://www.shritikenterprises.com/products/dehydrated-garlic" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://www.shritikllp.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dehydrated Garlic", item: "https://www.shritikllp.com/products/dehydrated-garlic" },
   ],
 };
 
@@ -68,7 +68,7 @@ const productJsonLd = {
   manufacturer: {
     "@type": "Organization",
     name: "Shritik Enterprises LLP",
-    url: "https://www.shritikenterprises.com",
+    url: "https://www.shritikllp.com",
   },
   countryOfOrigin: { "@type": "Country", name: "India" },
   category: "Dehydrated Vegetables",
@@ -84,7 +84,7 @@ const productJsonLd = {
     availability: "https://schema.org/InStock",
     priceCurrency: "USD",
     seller: { "@type": "Organization", name: "Shritik Enterprises LLP" },
-    url: "https://www.shritikenterprises.com/products/dehydrated-garlic",
+    url: "https://www.shritikllp.com/products/dehydrated-garlic",
   },
 };
 

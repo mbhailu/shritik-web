@@ -4,8 +4,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikenterprises.com" },
-    { "@type": "ListItem", position: 2, name: "Contact Us", item: "https://www.shritikenterprises.com/contact" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.shritikllp.com" },
+    { "@type": "ListItem", position: 2, name: "Contact Us", item: "https://www.shritikllp.com/contact" },
   ],
 };
 
@@ -13,12 +13,12 @@ const contactPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "Contact Shritik Enterprises LLP",
-  url: "https://www.shritikenterprises.com/contact",
+  url: "https://www.shritikllp.com/contact",
   description: "Send an export inquiry or request product samples. We respond within 24 hours.",
   mainEntity: {
     "@type": "Organization",
     name: "Shritik Enterprises LLP",
-    url: "https://www.shritikenterprises.com",
+    url: "https://www.shritikllp.com",
     email: "info@shritikllp.com",
     telephone: ["+912764357360", "+919925246360"],
     address: {
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
     'food ingredients supplier contact India',
     'request sample cashew India',
   ],
-  alternates: { canonical: 'https://www.shritikenterprises.com/contact' },
+  alternates: { canonical: 'https://www.shritikllp.com/contact' },
   openGraph: {
     title: 'Contact Us — Shritik Enterprises LLP',
     description: 'Send an export inquiry or request product samples. We respond within 24 hours for all pricing and specification requests.',
-    url: 'https://www.shritikenterprises.com/contact',
+    url: 'https://www.shritikllp.com/contact',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Contact Shritik Enterprises LLP' }],
   },
   twitter: {
