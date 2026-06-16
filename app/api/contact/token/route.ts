@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createHmac, randomBytes } from 'crypto';
 
+export const dynamic = 'force-dynamic';
+
 const TOKEN_RATE_LIMIT_MAX = 20;
 const TOKEN_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour per IP
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createHmac, timingSafeEqual } from 'crypto';
-import nodemailer from 'nodemailer';
+
+export const dynamic = 'force-dynamic';
 
 const TOKEN_TTL_SECONDS = 10 * 60; // token valid for 10 minutes
 const RATE_LIMIT_MAX = 5;
@@ -133,11 +134,11 @@ export async function POST(req: NextRequest) {
   }
 
   const secret = process.env.CONTACT_FORM_SECRET;
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.FROM_EMAIL;
   const recipient = process.env.RECIPIENT_EMAIL;
 
-  if (!secret || !gmailUser || !gmailPass || !recipient) {
+  if (!secret || !resendApiKey || !fromEmail || !recipient) {
     console.error('Missing required environment variables for contact form');
     return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
   }
@@ -167,7 +168,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  const { token, name, company, country, email, phone, product, quantity, message } = body;
+  const { token, name, company, country, email, phone, phoneCountryCode, product, quantity, message } = body;
 
   // Verify anti-replay token
   if (typeof token !== 'string' || !verifyToken(token, secret)) {
@@ -208,6 +209,11 @@ export async function POST(req: NextRequest) {
   if (!str(phone).trim()) errors.phone = 'Phone number is required';
   else if (str(phone).length > 50) errors.phone = 'Phone number must be under 50 characters';
 
+  // phoneCountryCode is optional meta — validate format if provided
+  if (str(phoneCountryCode) && !/^\+\d{1,4}$/.test(str(phoneCountryCode).trim())) {
+    errors.phoneCountryCode = 'Invalid country phone code';
+  }
+
   if (!str(product).trim() || !VALID_PRODUCTS.has(str(product))) {
     errors.product = 'Please select a valid product';
   }
@@ -225,12 +231,14 @@ export async function POST(req: NextRequest) {
   consumeToken(token);
 
   // Sanitize all fields
+  const dialCode = sanitize(str(phoneCountryCode));
+  const phoneRaw = sanitize(str(phone));
   const safe = {
     name: sanitize(str(name)),
     company: sanitize(str(company)),
     country: sanitize(str(country)),
     email: sanitize(str(email)),
-    phone: sanitize(str(phone)),
+    phone: dialCode ? `${dialCode} ${phoneRaw}` : phoneRaw,
     product: sanitize(str(product)),
     quantity: sanitize(str(quantity)),
     message: sanitize(str(message)),
@@ -305,21 +313,25 @@ export async function POST(req: NextRequest) {
     .join('\n');
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false, // STARTTLS
-      auth: { user: gmailUser, pass: gmailPass },
-    });
+    const { Resend } = await import('resend');
+    const resend = new Resend(resendApiKey);
 
-    await transporter.sendMail({
-      from: `"Shritik Enterprises Contact Form" <${gmailUser}>`,
+    const { error } = await resend.emails.send({
+      from: `Shritik Enterprises <${fromEmail}>`,
       to: recipient,
       replyTo: safe.email,
       subject: `Export Inquiry: ${safe.product} — ${safe.company} (${safe.country})`,
       text: textBody,
       html: htmlBody,
     });
+
+    if (error) {
+      console.error('Contact form: email delivery failed', error);
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again or email us directly.' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch {
