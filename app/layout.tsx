@@ -30,10 +30,18 @@ export const metadata: Metadata = {
   description:
     "Shritik Enterprises LLP is an India-based manufacturer and exporter of premium cashew kernels, dehydrated onion, garlic, and ginger for global food businesses. Certified with FSSAI, APEDA, IEC, ISO, Halal & Kosher.",
   keywords: [
+    "cashew kernels manufacturer India",
+    "cashew nuts manufacturer India",
+    "cashew kernels manufacturer company",
+    "premium quality cashew kernels",
+    "premium cashew nuts India",
     "cashew kernels exporter India",
     "dehydrated onion supplier India",
+    "onion powder manufacturer India",
     "dehydrated garlic exporter India",
     "dehydrated ginger supplier",
+    "beetroot powder supplier India",
+    "dehydrated vegetable powder manufacturer India",
     "Indian food ingredients exporter",
     "FSSAI certified food exporter",
     "APEDA registered exporter",

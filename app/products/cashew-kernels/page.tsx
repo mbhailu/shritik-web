@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Cashew Kernels',
   description: 'Premium cashew kernels in W180, W210, W240, W320, W450, splits and pieces. Exported from India with FSSAI, APEDA, and Halal certifications.',
   keywords: [
+    'cashew kernels manufacturer India',
+    'cashew nuts manufacturer',
+    'cashew kernels manufacturer company',
+    'premium quality cashew kernels',
+    'premium quality cashew nuts',
+    'premium cashew nuts supplier India',
+    'cashew nuts wholesale manufacturer',
     'cashew kernels W320 exporter India',
     'W180 cashew kernels bulk',
     'W240 W450 cashew kernels India',
@@ -15,6 +22,7 @@ export const metadata: Metadata = {
     'JH LWP cashew kernels India',
     'buy cashew kernels India wholesale',
     'Halal cashew kernels India',
+    'best cashew kernels supplier India',
   ],
   alternates: { canonical: 'https://www.shritikllp.com/products/cashew-kernels' },
   openGraph: {

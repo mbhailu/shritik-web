@@ -44,8 +44,12 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Shritik Enterprises LLP for export inquiries, product samples, pricing, and private label requests. We respond within 24 hours.',
   keywords: [
+    'cashew nuts manufacturer inquiry India',
+    'cashew kernels manufacturer contact',
+    'premium cashew kernels quote India',
     'contact Shritik Enterprises',
     'cashew export inquiry India',
+    'onion powder supplier inquiry India',
     'dehydrated food export quote India',
     'food ingredients supplier contact India',
     'request sample cashew India',

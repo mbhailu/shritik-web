@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Quality & Certifications',
   description: 'Shritik Enterprises LLP holds FSSAI, APEDA, IEC, ISO, Halal, and Kosher certifications. Learn about our quality control process for cashews and dehydrated food exports.',
   keywords: [
+    'premium quality cashew kernels India',
+    'premium quality cashew nuts certified',
+    'certified cashew kernels manufacturer India',
     'FSSAI certified food exporter India',
     'APEDA registered exporter India',
     'ISO certified food company India',
@@ -15,6 +18,7 @@ export const metadata: Metadata = {
     'Kosher certified food India',
     'food quality control India export',
     'IEC certified exporter India',
+    'quality assured food manufacturer India',
   ],
   alternates: { canonical: 'https://www.shritikllp.com/quality' },
   openGraph: {

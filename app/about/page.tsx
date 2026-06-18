@@ -10,11 +10,15 @@ export const metadata: Metadata = {
   title: 'About Us',
   description: 'Shritik Enterprises LLP — India-based manufacturer and exporter of premium cashew kernels and dehydrated food ingredients. Learn about our story, values, and capabilities.',
   keywords: [
+    'cashew kernels manufacturer company',
+    'cashew nuts manufacturer India',
+    'premium cashew nuts supplier India',
     'about Shritik Enterprises',
     'cashew exporter India story',
     'Indian food manufacturer exporter',
     'dehydrated food manufacturer India',
     'FSSAI APEDA certified company India',
+    'trusted cashew manufacturer India',
   ],
   alternates: { canonical: 'https://www.shritikllp.com/about' },
   openGraph: {

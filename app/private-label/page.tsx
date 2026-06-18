@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: 'Private Label',
   description: 'Private label cashew kernels, dehydrated onion, garlic, and ginger from India. Custom packaging, branding, and formulation support for food brands worldwide.',
   keywords: [
+    'private label cashew nuts manufacturer India',
     'private label cashew kernels India',
+    'premium quality cashew private label',
+    'private label onion powder manufacturer India',
     'private label dehydrated vegetables India',
     'white label food manufacturer India',
     'custom packaging food export India',

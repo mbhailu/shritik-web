@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   title: 'Infrastructure',
   description: 'Shritik Enterprises LLP owns and operates integrated cashew processing and dehydration plants in India. Learn about our manufacturing capabilities and quality infrastructure.',
   keywords: [
+    'cashew kernels manufacturer India',
+    'cashew nuts manufacturer plant India',
     'cashew processing plant India',
+    'cashew processing unit India',
+    'onion powder manufacturing plant India',
     'dehydrated food manufacturing India',
     'food grade processing facility India',
     'in-house cashew shelling grading',

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Dehydrated Ginger',
   description: 'Dehydrated ginger slices, flakes, granules, and powder retaining natural gingerol. Exported from India with FSSAI, Halal, and Kosher certification.',
   keywords: [
+    'ginger powder manufacturer India',
+    'dehydrated ginger manufacturer India',
+    'ginger powder bulk manufacturer',
+    'premium quality ginger powder India',
     'dehydrated ginger exporter India',
     'dried ginger powder bulk India',
     'ginger flakes granules supplier India',

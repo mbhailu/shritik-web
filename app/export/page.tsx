@@ -8,7 +8,12 @@ export const metadata: Metadata = {
   title: 'Export & Packaging',
   description: 'Shritik Enterprises LLP exports cashew kernels and dehydrated food ingredients to 30+ countries. Learn about our export markets, packaging options, and documentation.',
   keywords: [
+    'cashew nuts manufacturer exporter India',
+    'cashew kernels manufacturer exporter',
+    'premium cashew kernels export India',
     'cashew export from India',
+    'onion powder exporter India',
+    'beetroot powder exporter India',
     'dehydrated food export India',
     'food export packaging India',
     'FCL LCL food shipment India',

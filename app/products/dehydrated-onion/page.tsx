@@ -6,12 +6,17 @@ export const metadata: Metadata = {
   title: 'Dehydrated Onion',
   description: 'Dehydrated onion flakes, minced, granules, and powder — white and red varieties. Exported from India with FSSAI and Halal certification.',
   keywords: [
+    'onion powder manufacturer India',
+    'dehydrated onion manufacturer India',
+    'white onion powder bulk manufacturer',
+    'red onion powder manufacturer India',
+    'onion powder bulk supplier India',
     'dehydrated onion exporter India',
     'dried onion flakes wholesale India',
-    'onion powder bulk supplier India',
     'red onion flakes exporter India',
     'onion granules minced India',
     'Halal dehydrated onion India',
+    'premium quality onion powder India',
   ],
   alternates: { canonical: 'https://www.shritikllp.com/products/dehydrated-onion' },
   openGraph: {

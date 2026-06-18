@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Dehydrated Garlic',
   description: 'Dehydrated garlic flakes, granules, minced, and powder with high allicin content. Exported from India with FSSAI, Halal, and Kosher certification.',
   keywords: [
+    'garlic powder manufacturer India',
+    'dehydrated garlic manufacturer India',
+    'garlic powder bulk manufacturer',
+    'premium quality garlic powder India',
     'dehydrated garlic exporter India',
     'dried garlic flakes wholesale India',
     'garlic granules supplier India',
