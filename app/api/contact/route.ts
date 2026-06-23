@@ -318,7 +318,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: `Shritik Enterprises <${fromEmail}>`,
-      to: recipient,
+      to: [recipient, 'shritikcolor@aol.com'],
       replyTo: safe.email,
       subject: `Export Inquiry: ${safe.product} — ${safe.company} (${safe.country})`,
       text: textBody,

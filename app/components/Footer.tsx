@@ -118,7 +118,10 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@shritikllp.com" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors">info@shritikllp.com</a>
+                <div>
+                  <a href="mailto:info@shritikllp.com" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors block">info@shritikllp.com</a>
+                  <a href="mailto:shritikcolor@aol.com" className="text-gray-400 text-sm hover:text-[#d4a017] transition-colors block">shritikcolor@aol.com</a>
+                </div>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#52b788] mt-0.5 flex-shrink-0" />

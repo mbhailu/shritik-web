@@ -501,8 +501,11 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-[#2d6a4f] mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Email</p>
-                      <a href="mailto:info@shritikllp.com" className="text-sm text-[#2d6a4f] hover:text-[#1a472a]">
+                      <a href="mailto:info@shritikllp.com" className="text-sm text-[#2d6a4f] hover:text-[#1a472a] block">
                         info@shritikllp.com
+                      </a>
+                      <a href="mailto:shritikcolor@aol.com" className="text-sm text-[#2d6a4f] hover:text-[#1a472a] block">
+                        shritikcolor@aol.com
                       </a>
                     </div>
                   </div>

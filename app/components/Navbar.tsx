@@ -76,6 +76,8 @@ export default function Navbar() {
             </span>
             <span className="text-green-400">|</span>
             <a href="mailto:info@shritikllp.com" className="hover:text-accent transition-colors">info@shritikllp.com</a>
+            <span className="text-green-400">|</span>
+            <a href="mailto:shritikcolor@aol.com" className="hover:text-accent transition-colors">shritikcolor@aol.com</a>
           </div>
         </div>
       </div>

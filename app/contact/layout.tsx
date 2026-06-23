@@ -19,7 +19,7 @@ const contactPageJsonLd = {
     "@type": "Organization",
     name: "Shritik Enterprises LLP",
     url: "https://www.shritikllp.com",
-    email: "info@shritikllp.com",
+    email: ["info@shritikllp.com", "shritikcolor@aol.com"],
     telephone: ["+912764357360", "+919925246360"],
     address: {
       "@type": "PostalAddress",
@@ -32,7 +32,7 @@ const contactPageJsonLd = {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
-      email: "info@shritikllp.com",
+      email: ["info@shritikllp.com", "shritikcolor@aol.com"],
       telephone: "+919925246360",
       availableLanguage: ["English", "Hindi", "Gujarati"],
       areaServed: "Worldwide",

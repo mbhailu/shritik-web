@@ -128,7 +128,7 @@ const organizationJsonLd = {
   },
   description:
     "India-based manufacturer and exporter of premium cashew kernels, dehydrated onion, garlic, and ginger. Certified with FSSAI, APEDA, IEC, ISO, Halal & Kosher. Serving 30+ countries.",
-  email: "info@shritikllp.com",
+  email: ["info@shritikllp.com", "shritikcolor@aol.com"],
   telephone: ["+912764357360", "+919925246360"],
   foundingDate: "2014",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 50 },
